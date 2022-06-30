@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+
+import expensedata from './data.json';
+import Barchart from './components/Barchart';
 import './App.css';
 
 function App() {
+  let total = expensedata.reduce((accu,esdata) => {
+    return accu + esdata.amount
+  },0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <main className="main-section">
+    <div className="balance">
+      <div className="inner-section">
+        <p>My balance</p>
+      <h2>$921.48</h2>
+      </div>
+      <img src="../images/logo.svg"></img>
     </div>
+    <div className="spend-chart">
+      <h2>Spending - Last 7 Days</h2>
+      <div className="days">
+       <Barchart />
+      </div>
+      <div className="total">
+        <div>
+          <p>Total this month</p>
+        <h2>${total}</h2>
+        </div>
+        <div className="stats">
+        <p className="percent"><span>+2.4%</span></p>
+        <p>from last month</p>
+        </div>
+    </div>
+    </div>
+  </main>
   );
 }
 

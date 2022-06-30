@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+:root{
+    --soft-red:hsl(10, 79%, 65%);
+    --cyan:hsl(186, 34%, 60%);
+    --dark-brown:hsl(25, 47%, 15%);
+    --medium-brown:hsl(28, 10%, 53%);
+    --cream:hsl(27, 66%, 92%);
+    --very-pale-orange:hsl(33, 100%, 98%);
+    --body-font-size:1.125rem;
+    --ff-primary:'DM Sans', sans-serif;
+    --fs-h2:1.5rem;
+    --fs-h3:1rem;
+}
+body{
+    width:100%;
+    min-height:100vh;
+    background: var(--cream);
+    font-family: var(--ff-primary);
+    font-size: var(--body-font-size);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-section{
+            width:350px;          
+            
+}
+.balance{
+     background:var(--soft-red);
+     display:flex;
+     align-items: center;
+     justify-content: space-between;
+     color:var(--cream);
+     border-radius: 8px;
+     padding:20px 10px;
+}
+.inner-section{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.spend-chart{
+    background:var(--very-pale-orange);
+    color:var(--dark-brown);
+    padding:10px;
+    border-radius: 8px;
+    margin-top:15px;
+}
+.days{
+    display:flex;
+    width:100%;
+    
+    
+}
+.day{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: end;
+    min-width:calc(330px/7);   
+    padding:10px;
+    height:130px;
+}
+.bar{
+    background:var(--soft-red);
+    height:100px;
+    width:100%;
+}
+.total{
+    
+     display:flex;
+     justify-content: space-between;
+     margin-top:15px;
+    
+}
+.days::after{
+    content:"";
+    height:1px;
+    width:100%;
+    background-color:var(--cream);
+    position:absolute;
+    bottom:0;
+}
+span{
+    font-weight: bold;
+}
+.percent{
+    text-align: right;
+}
+
+.value{
+    display:none;
+
+}
+.day:hover .value{
+    display:block;
+    position:absolute;
+    top:0;
+    color:white;
+    background-color: black;
+    border-radius:5px;
+    font-size: 12px;
+    font-weight: 400;
+    padding:3px 5px;
+    margin-bottom:5px;
+}
